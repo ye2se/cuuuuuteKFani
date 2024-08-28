@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">   
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"   content="width=device-width, initial-scale=1.0">
+    <title>키프레임 애니메이션</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style1.css">
+</head>
+<body>
+    <div class="sun">
+        <span></span>
+    </div>
+    <div class="cloude"></div>
+    <div class="wrap">
+        <div class="car">
+            <span></span>
+            <strong>
+                <em></em>
+            </strong>
+        </div>
+    </div>
+
+    <button class="wow">
+        <span></span>
+    </button>
+
+    <script>
+        const btn = document.querySelector('.wow');
+        const wrap = document.querySelector('.wrap');
+        btn.addEventListener('click', function () {
+            this.classList.toggle('active');
+            wrap.classList.toggle('active');
+        })
+    </script>
+</body>
+</html>

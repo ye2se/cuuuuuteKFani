@@ -1,0 +1,346 @@
+:root {
+    --c01 : #D1E9F6;
+    --c02 : #F6EACB;
+    --c03 : #F1D3CE;
+    --c04 : #EECAD5;
+
+    --sun : #ff6347;
+}
+
+.sun {
+    position: absolute;
+    top: 160px;
+    left: 160px;
+    z-index: 1;
+
+    width: 80px;
+    height: 80px;
+
+    background: var(--sun);
+    border-radius: 50%;
+
+    animation: sun 10s infinite linear;
+}
+
+.sun::before {
+    content: "";
+    position: absolute;
+    left: -28px;
+    top: 36px;
+    width: 20px;
+    height: 8px;
+    background: var(--sun);
+    border-radius: 4px;
+}
+
+.sun::after {
+    content: "";
+    position: absolute;
+    right: -28px;
+    top: 36px;
+    width: 20px;
+    height: 8px;
+    background: var(--sun);
+    border-radius: 4px;
+}
+
+.sun span::before {
+    content: "";
+    position: absolute;
+    top: -28px;
+    left: 36px;
+    width: 8px;
+    height: 20px;
+    background: var(--sun);
+    border-radius: 4px;
+}
+
+.sun span::after {
+    content: "";
+    position: absolute;
+    bottom: -28px;
+    left: 36px;
+    width: 8px;
+    height: 20px;
+    background: var(--sun);
+    border-radius: 4px;
+}
+
+@keyframes sun {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: var(--c01);
+
+    overflow: hidden;
+
+    transition: 2s;
+}
+
+.wrap.active {
+    left: 100%;
+}
+
+.wrap::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+
+    height: 240px;
+    background: var(--c02);
+}
+
+.wrap .car {
+    position: absolute;
+    bottom: 200px;
+    right: -240px;
+    z-index: 1;
+
+    width: 200px;
+    height: 80px;
+    background: var(--c04);
+
+    border-radius: 30px 0 0 0;
+
+    animation: car 10s infinite linear;
+}
+
+.wrap .car::before {
+    content: "";
+    position: absolute;
+
+    bottom: -20px;
+    left: 20px;
+
+    width: 40px;
+    height: 40px;
+    background: var(--c01);
+
+    border-radius: 10px;
+
+    animation: baki 1s infinite linear;
+}
+
+.wrap .car::after {
+    content: "";
+    position: absolute;
+
+    bottom: -20px;
+    right: 20px;
+
+    width: 40px;
+    height: 40px;
+    background: var(--c01);
+
+    border-radius: 10px;
+
+    animation: baki 1s infinite linear;
+}
+
+.wrap .car span::before {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: 8px;
+
+    width: 40px;
+    height: 40px;
+
+    background: #fff;
+
+    border-radius: 22px 0 0 0;
+}
+
+.wrap .car span::after {
+    content: "";
+    position: absolute;
+    top: 50px;
+    left: 0px;
+
+    transform: translate(-50%, -50%);
+
+    width: 10px;
+    height: 10px;
+
+    background: lemonchiffon;
+
+    border-radius: 50%;
+}
+
+@keyframes baki {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+@keyframes car {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(-2400px, 0);
+    }
+}
+
+.cloude {
+    position: absolute;
+    top: 240px;
+    left: 240px;
+    z-index: 1;
+
+    width: 80px;
+    height: 32px;
+    background: #fff;
+
+    border-radius: 16px;
+
+    animation: cloude 5s infinite linear;
+}
+
+.cloude::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: 20px;
+
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #fff;
+}
+
+.cloude::after {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 40px;
+
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #fff;
+}
+
+@keyframes cloude {
+    0% {
+        transform: translate(0, 0);
+        opacity: 0;
+    }
+
+    50% {
+        transform: translate(200px, 0);
+        opacity: 1;
+    }
+    
+    100% {
+        transform: translate(200px, 0);
+        opacity: 0;
+    }
+}
+
+.car strong {
+    position: absolute;
+    top: -20px;
+    right: 20px;
+
+    width: 40px;
+    height: 40px;
+
+    animation: navi 1s infinite linear;
+}
+
+.car strong::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    clip-path: polygon(0 0, 0% 100%, 100% 50%);
+
+    background: var(--sun);
+}
+
+.car strong::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    clip-path: polygon(100% 0, 100% 100%, 0 50%);
+
+    background: var(--sun);
+}
+
+.car em::before {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 14px;
+    z-index: 1;
+
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+
+    background: #333;
+}
+
+.car em::after {
+    content: "";
+    position: absolute;
+    top: 12px;
+    left: 14px;
+    z-index: 1;
+
+    width: 12px;
+    height: 20px;
+    border-radius: 50%;
+
+    background: #333;
+}
+
+@keyframes navi {
+    0% {
+        transform: scaleX(1);
+    }
+    100% {
+        transform: scaleX(0.2);
+    }
+}
+
+.wow {
+    position: fixed;
+    top: 80px;
+    right: 80px;
+
+    width: 40px;
+    height: 40px;
+
+    border: none;
+    background: #FFF;
+}
+
+.wow.active {
+    background: var(--c01);
+}
